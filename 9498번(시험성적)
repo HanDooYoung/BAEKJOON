@@ -1,0 +1,25 @@
+import java.util.Scanner;
+
+public class Main {
+
+	public static void main(String[] args) {
+
+		// TODO Auto-generated method stub
+		Scanner sc=new Scanner(System.in);
+		int point;
+		
+		point=sc.nextInt();
+		if(point>89) {
+			System.out.println("A");
+		}else if(point>79) {
+			System.out.println("B");
+		}else if(point>69) {
+			System.out.println("C");
+		}else if(point>59) {
+			System.out.println("D");
+		}else {
+			System.out.println("F");
+		}
+	}
+
+}
