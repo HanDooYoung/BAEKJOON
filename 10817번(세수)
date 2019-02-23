@@ -1,0 +1,43 @@
+import java.util.Scanner;
+
+public class Main {
+
+	public static void main(String[] args) {
+
+		// TODO Auto-generated method stub
+		Scanner sc=new Scanner(System.in);
+		int A,B,C,store;
+		
+		A=sc.nextInt();
+		B=sc.nextInt();
+		C=sc.nextInt();
+		
+		if(A>B) {
+			store=A;
+			A=B;
+			B=store;
+			if(B>C) {
+				store=B;
+				B=C;
+				C=store;
+				if(A>B) {
+					store=A;
+					A=B;
+					B=store;
+				}
+			}
+		}else if(B>C) {
+			store=B;
+			B=C;
+			C=store;
+			if(A>B) {
+				store=A;
+				A=B;
+				B=store;
+			}
+		}
+		
+		System.out.println(B);
+	}
+
+}
