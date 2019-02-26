@@ -1,0 +1,28 @@
+import java.util.Scanner;
+
+public class Main {
+
+	public static void main(String[] args) {
+
+		// TODO Auto-generated method stub
+		Scanner sc=new Scanner(System.in);
+		
+		int N;
+		double M=0,sum=0;
+		
+		N=sc.nextInt();
+		double point[]=new double[N];
+		for(int i=0;i<N;i++) {
+			point[i]=sc.nextInt();
+			if(M<point[i]) {
+				M=point[i];
+			}
+		}
+		for(int j=0;j<N;j++) {
+			point[j]=point[j]/M*100;
+			sum+=point[j];
+		}
+		System.out.printf("%f", sum/N);
+	}
+
+}
