@@ -1,0 +1,33 @@
+import java.util.Scanner;
+
+public class Main {
+
+	public static void main(String[] args) {
+
+		// TODO Auto-generated method stub
+		Scanner sc=new Scanner(System.in);
+		
+		int C,N,count;
+		double avg;
+		
+		C=sc.nextInt();
+		for(int i=0;i<C;i++) {
+			count=0;
+			avg=0;
+			N=sc.nextInt();
+			int point[]=new int[N];
+			for(int j=0;j<N;j++) {
+				point[j]=sc.nextInt();
+				avg+=point[j];
+			}
+			avg/=N;
+			for(int k=0;k<N;k++) {
+				if(point[k]>avg) {
+					count++;
+				}
+			}
+			System.out.printf("%.3f%%\n",(double)count/(double)N*100);
+		}
+	}
+
+}
