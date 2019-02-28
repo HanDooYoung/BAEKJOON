@@ -1,0 +1,34 @@
+import java.util.Scanner;
+
+public class Main {
+
+	public static void main(String[] args) {
+
+		// TODO Auto-generated method stub
+		Scanner sc=new Scanner(System.in);
+		
+		int N,f,s,clone,sum,count=1;
+		String str = "";
+		
+		N=sc.nextInt();
+		clone=N;
+		f=N%10;
+		s=N/10;
+		sum=f+s;
+		str+=f;
+		str+=sum%10;
+		clone=Integer.parseInt(str);
+		while(N!=clone) {
+			count++;
+			f=clone%10;
+			s=clone/10;
+			sum=s+f;
+			str="";
+			str+=f;
+			str+=sum%10;
+			clone=Integer.parseInt(str);
+		}
+		System.out.println(count);
+	}
+
+}
