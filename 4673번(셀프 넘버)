@@ -1,0 +1,48 @@
+import java.util.Scanner;
+
+public class Main {
+
+	public static void main(String[] args) {
+
+		// TODO Auto-generated method stub
+		Scanner sc = new Scanner(System.in);
+
+		boolean n[] = new boolean[10000];
+		int a1, a2, b1, b2, c1, c2, sum;
+
+		for (int i = 1; i < 9968; i++) {
+			sum = 0;
+			if (i >= 1000) {
+				a1 = i / 1000;
+				a2 = i % 1000;
+				b1 = a2 / 100;
+				b2 = a2 % 100;
+				c1 = b2 / 10;
+				c2 = b2 % 10;
+				sum = i + a1 + b1 + c1 + c2;
+				n[sum] = true;
+			} else if (i >= 100) {
+				a1 = i / 100;
+				a2 = i % 100;
+				b1 = a2 / 10;
+				b2 = a2 % 10;
+				sum = i + a1 + b1 + b2;
+				n[sum] = true;
+			} else if (i >= 10) {
+				a1 = i / 10;
+				a2 = i % 10;
+				sum = i + a1 + a2;
+				n[sum] = true;
+			} else {
+				sum = i + i;
+				n[sum] = true;
+			}
+		}
+		for(int i=1;i<9994;i++) {
+			if(!n[i]) {
+				System.out.println(i);
+			}
+		}
+	}
+
+}
