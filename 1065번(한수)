@@ -1,0 +1,31 @@
+import java.util.Scanner;
+
+public class Main {
+
+	public static void main(String[] args) {
+
+		// TODO Auto-generated method stub
+		Scanner sc = new Scanner(System.in);
+
+		int N,a,b,c,d,save1,save2,count=0;
+		
+		N=sc.nextInt();
+		for(int i=1;i<=N;i++) {
+			if(i<100) {
+				count++;
+			}else {
+				a=i/100;
+				b=i%100;
+				c=b/10;
+				d=b%10;
+				save1=a-c;
+				save2=c-d;
+				if(save1==save2) {
+					count++;
+				}
+			}
+		}
+		System.out.println(count);
+	}
+
+}
