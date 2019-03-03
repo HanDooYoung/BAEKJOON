@@ -1,0 +1,29 @@
+import java.util.Scanner;
+
+public class Main {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+
+		Scanner sc=new Scanner(System.in);
+		
+		int A,B,C,mul;
+		int count[]=new int[10];
+		String str;
+		
+		A=sc.nextInt();
+		B=sc.nextInt();
+		C=sc.nextInt();
+		
+		mul=A*B*C;
+		str=Integer.toString(mul);
+		String[] sp=str.split("");
+		for(int i=0;i<sp.length;i++) {
+			count[Integer.parseInt(sp[i])]++;
+		}
+		for(int j=0;j<10;j++) {
+			System.out.println(count[j]);
+		}
+	}
+
+}
