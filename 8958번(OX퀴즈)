@@ -1,0 +1,29 @@
+import java.util.Scanner;
+
+public class Main {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+
+		Scanner sc=new Scanner(System.in);
+		
+		String OX;
+		int N,point,count;
+		N=sc.nextInt();
+		for(int i=0;i<N;i++) {
+			point=count=0;
+			OX=sc.next();
+			String sp[]=OX.split("");
+			for(int j=0;j<sp.length;j++) {
+				if(sp[j].equals("O")) {
+					count++;
+					point+=count;
+				}else {
+					count=0;
+				}
+			}
+			System.out.println(point);
+		}
+	}
+
+}
