@@ -1,0 +1,37 @@
+import java.util.Scanner;
+
+public class Main {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+
+		Scanner sc=new Scanner(System.in);
+		
+		int N,count=0;
+		String str;
+		boolean alpha[]=new boolean[26],flag;
+		
+		N=sc.nextInt();
+		for(int i=0;i<N;i++) {
+			for(int j=0;j<26;j++) {
+				alpha[j]=false;
+			}
+			flag=true;
+			str=sc.next();
+			for(int j=0;j<str.length();j++) {
+				if(!alpha[str.charAt(j)-97]) {
+					alpha[str.charAt(j)-97]=true;
+				}else {
+					if(str.charAt(j)!=str.charAt(j-1)) {
+						flag=false;
+					}
+				}
+			}
+			if(flag) {
+				count++;
+			}
+		}
+		System.out.println(count);
+	}
+
+}
