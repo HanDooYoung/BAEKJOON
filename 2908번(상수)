@@ -1,0 +1,27 @@
+import java.util.Scanner;
+
+public class Main {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+
+		Scanner sc=new Scanner(System.in);
+		String A,B,save="";
+		A=sc.next();
+		B=sc.next();
+		for(int i=2;i>=0;i--) {
+			save+=A.charAt(i);
+		}
+		A=save;
+		save="";
+		for(int i=2;i>=0;i--) {
+			save+=B.charAt(i);
+		}
+		if(Integer.parseInt(A)>=Integer.parseInt(save)) {
+			System.out.println(A);
+		}else {
+			System.out.println(save);
+		}
+	}
+
+}
