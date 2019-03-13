@@ -1,0 +1,37 @@
+import java.util.Scanner;
+
+public class Main {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+
+		Scanner sc=new Scanner(System.in);
+		
+		String str;
+		int time=0;
+		str=sc.next();
+		for(int i=0;i<str.length();i++) {
+			if(str.charAt(i)>64&&str.charAt(i)<68) {
+				time+=3;
+			}else if(str.charAt(i)<71) {
+				time+=4;
+			}else if(str.charAt(i)<74) {
+				time+=5;
+			}else if(str.charAt(i)<77) {
+				time+=6;
+			}else if(str.charAt(i)<80) {
+				time+=7;
+			}else if(str.charAt(i)<84) {
+				time+=8;
+			}else if(str.charAt(i)<87) {
+				time+=9;
+			}else if(str.charAt(i)<91) {
+				time+=10;
+			}else {
+				time+=11;
+			}
+		}
+		System.out.println(time);
+	}
+
+}
