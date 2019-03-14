@@ -1,0 +1,64 @@
+import java.util.Scanner;
+
+public class Main {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+
+		Scanner sc = new Scanner(System.in);
+
+		String str;
+		int count = 0;
+		str = sc.next();
+		for (int i = 1; i < str.length(); i++) {
+			if (str.charAt(i) == '=') {
+				if (str.charAt(i - 1) == 'c') {
+					count++;
+				} else if (str.charAt(i - 1) == 's') {
+					count++;
+				} else if (str.charAt(i - 1) == 'z') {
+					count++;
+				}
+			} else if (str.charAt(i) == '-') {
+				if (str.charAt(i - 1) == 'c') {
+					count++;
+				} else if (str.charAt(i - 1) == 'd') {
+					count++;
+				}
+			} else if (str.charAt(i) == 'j') {
+				if (str.charAt(i - 1) == 'l') {
+					count++;
+				} else if (str.charAt(i - 1) == 'n') {
+					count++;
+				}
+			}
+		}
+		String array1[] = str.split("c=");
+		for (int i = 0; i < array1.length; i++) {
+			String array2[] = array1[i].split("c-");
+			for (int j = 0; j < array2.length; j++) {
+				String array3[] = array2[j].split("dz=");
+				for (int k = 0; k < array3.length; k++) {
+					String array4[] = array3[k].split("d-");
+					for (int l = 0; l < array4.length; l++) {
+						String array5[] = array4[l].split("lj");
+						for (int n = 0; n < array5.length; n++) {
+							String array6[] = array5[n].split("nj");
+							for (int m = 0; m < array6.length; m++) {
+								String array7[] = array6[m].split("s=");
+								for (int o = 0; o < array7.length; o++) {
+									String array8[] = array7[o].split("z=");
+									for (int p = 0; p < array8.length; p++) {
+										count += array8[p].length();
+									}
+								}
+							}
+						}
+					}
+				}
+			}
+		}
+		System.out.println(count);
+	}
+
+}
