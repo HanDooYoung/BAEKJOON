@@ -1,0 +1,42 @@
+import java.util.Scanner;
+
+public class Main {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		Scanner sc = new Scanner(System.in);
+		int X, f = 1, r = 1, p = 1, count = 1;
+		boolean flag = true;
+		X = sc.nextInt();
+		while (X > count) {
+			for (int i = 0; i < p; i++) {
+				if (flag) {
+					if (f == 1) {
+						r++;
+					} else {
+						f--;
+						r++;
+					}
+				} else {
+					if (r == 1) {
+						f++;
+					} else {
+						f++;
+						r--;
+					}
+				}
+				count++;
+				if (X == count) {
+					break;
+				}
+			}
+			if (flag) {
+				flag = false;
+			} else {
+				flag = true;
+			}
+			p++;
+		}
+		System.out.println(f + "/" + r);
+	}
+}
