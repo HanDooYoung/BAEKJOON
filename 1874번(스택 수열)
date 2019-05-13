@@ -1,0 +1,78 @@
+import java.util.Scanner;
+
+public class Main {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		Scanner sc = new Scanner(System.in);
+		int n, X = 1, top = -1;
+		boolean flag = true;
+		n = sc.nextInt();
+		int[] arr = new int[100000];
+		int[] sequence = new int[100000];
+		for (int i = 0; i < n; i++) {
+			sequence[i] = sc.nextInt();
+		}
+		for (int i = 0; i < n; i++) {
+			if (top == -1) {
+				top = push(arr, X, top);
+				X++;
+			}
+			while (arr[top] != sequence[i]) {
+				if (arr[top] < sequence[i]) {
+					top = push(arr, X, top);
+					X++;
+				} else {
+					break;
+				}
+			}
+			if (arr[top] == sequence[i]) {
+				top = pop(arr, top);
+			} else {
+				flag = false;
+				break;
+			}
+		}
+		if (flag) {
+			X = 1;
+			top = 0;
+			for (int i = 0; i < n; i++) {
+				if (top == -1) {
+					top = push(arr, X, top);
+					X++;
+					System.out.println("+");
+				}
+				while (arr[top] != sequence[i]) {
+					if (arr[top] < sequence[i]) {
+						top = push(arr, X, top);
+						X++;
+						System.out.println("+");
+					} else {
+						break;
+					}
+				}
+				if (arr[top] == sequence[i]) {
+					top = pop(arr, top);
+					System.out.println("-");
+				} else {
+					flag = false;
+					break;
+				}
+			}
+		} else {
+			System.out.println("NO");
+		}
+	}
+
+	static int push(int[] arr, int X, int top) {
+		top++;
+		arr[top] = X;
+		return top;
+	}
+
+	static int pop(int[] arr, int top) {
+		arr[top] = 0;
+		top--;
+		return top;
+	}
+}
