@@ -1,0 +1,68 @@
+import java.util.Scanner;
+
+public class Main {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		Scanner sc = new Scanner(System.in);
+		int[] arr = new int[10000];
+		int N, X, top = -1;
+		String ins;
+		N = sc.nextInt();
+		for (int i = 0; i < N; i++) {
+			ins = sc.next();
+			switch (ins) {
+			case "push":
+				X = sc.nextInt();
+				top = push(arr, X, top);
+				break;
+			case "pop":
+				if (top != -1) {
+					System.out.println(arr[0]);
+					top = pop(arr, top);
+				} else {
+					System.out.println(-1);
+				}
+				break;
+			case "size":
+				System.out.println(top + 1);
+				break;
+			case "empty":
+				if (top == -1) {
+					System.out.println(1);
+				} else {
+					System.out.println(0);
+				}
+				break;
+			case "front":
+				if (top != -1) {
+					System.out.println(arr[0]);
+				} else {
+					System.out.println(-1);
+				}
+				break;
+			case "back":
+				if (top != -1) {
+					System.out.println(arr[top]);
+				} else {
+					System.out.println(-1);
+				}
+			}
+		}
+	}
+
+	static int push(int[] arr, int X, int top) {
+		top++;
+		arr[top] = X;
+		return top;
+	}
+
+	static int pop(int[] arr, int top) {
+		for (int i = 0; i < top; i++) {
+			arr[i] = arr[i + 1];
+		}
+		arr[top] = 0;
+		top--;
+		return top;
+	}
+}
